@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection } from './components';
+import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
 
 const App = () => {
   return (
@@ -39,7 +39,7 @@ const App = () => {
 
         {/* Reservation Route */}
         <Route path="/reservation" element={<FacilitiesSection />} />
-
+        <Route path="/signup" element={<Signup />} />
         {/* Contact Route */}
         <Route path="/contact" element={<LocationSection />} />
       </Routes>
