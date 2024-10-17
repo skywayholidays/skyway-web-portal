@@ -5,7 +5,7 @@ const Footer = () => {
     [{
       title: "Home",
       isTop: true,
-      link: null,
+      link: '/',
     },
       {
         title: "Booking",

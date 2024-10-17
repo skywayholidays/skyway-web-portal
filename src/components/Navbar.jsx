@@ -50,7 +50,7 @@ const Navbar = () => {
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
             >
-              <MenuItem onClick={handleMenuClose}><a href="#">Home</a></MenuItem>
+              <MenuItem onClick={handleMenuClose}><a href="/">Home</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/rooms">Rooms</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/about">About</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/events">Events</a></MenuItem>
@@ -61,7 +61,7 @@ const Navbar = () => {
         ) : (
           // For desktop view
           <Box sx={{ display: 'flex', gap: 4 }}>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="/rooms">Rooms</a>
             <a href="/about">About</a>
             <a href="/events">Events</a>
