@@ -154,7 +154,7 @@ const HeroSection = () => {
               </div>
             </div>
             <div className='hero-search flex justify-start relative z-3 max-md:justify-center max-md:mb-6' onClick={onSearchButtonClick}>
-              <Button addClass={'!rounded-[280px] flex justify-start items-center text-white text-xl !px-11'}>
+              <Button addClass={'searchBtn'}>
                 <img src={IconSearch} className="mr-2" alt="Search Icon" />
                 Search
               </Button>

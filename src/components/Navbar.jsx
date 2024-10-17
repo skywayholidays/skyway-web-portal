@@ -87,12 +87,12 @@ const Navbar = () => {
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button
-            addClass="bg-maincolor text-black border hover:bg-maincolorhover "
+            addClass="secondaryBtn"
               onClick={handleSignupClick}
             >
               Sign Up
             </Button>
-            <Button addClass="text-white" onClick={handleLoginClick}
+            <Button addClass="primaryBtn" onClick={handleLoginClick}
             >
               Login
             </Button>
