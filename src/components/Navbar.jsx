@@ -38,7 +38,11 @@ const Navbar = () => {
         {isMobile ? (
           <>
             <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 2 }}>
-              <Button addClass="bg-white/30 text-black border border-black" onClick={handleSignupClick}>
+              <Button
+                addClass="bg-white/30 border border-black"
+                sx={{ color: 'black' }} // Ensures black text color
+                onClick={handleSignupClick}
+              >
                 Sign Up
               </Button>
               <Button addClass="" onClick={handleLoginClick}>
@@ -82,10 +86,14 @@ const Navbar = () => {
 
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button addClass="bg-white/30 text-black border border-black" onClick={handleSignupClick}>
+            <Button
+            addClass="bg-maincolor text-black border hover:bg-maincolorhover "
+              onClick={handleSignupClick}
+            >
               Sign Up
             </Button>
-            <Button addClass="" onClick={handleLoginClick}>
+            <Button addClass="text-white" onClick={handleLoginClick}
+            >
               Login
             </Button>
           </Box>
