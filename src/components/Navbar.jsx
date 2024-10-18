@@ -87,6 +87,7 @@ const Navbar = () => {
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button
+
             addClass="secondaryBtn"
               onClick={handleSignupClick}
             >
