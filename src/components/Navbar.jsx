@@ -87,7 +87,7 @@ const Navbar = () => {
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button
-            addClass="bg-maincolor text-black border hover:bg-maincolorhover "
+            addClass=" bg-maincolor text-black border hover:bg-maincolorhover"
               onClick={handleSignupClick}
             >
               Sign Up
