@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import Button from "./Button"; // Your custom button component
 
-const Navbar = () => {
+const Navbar = ({ isAuthRoute }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState(null);
@@ -40,12 +40,13 @@ const Navbar = () => {
             <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 2 }}>
               <Button
                 addClass="bg-white/30 border border-black"
-                sx={{ color: 'black' }} // Ensures black text color
+                sx={{ color: 'black' }}
                 onClick={handleSignupClick}
+                disabled={isAuthRoute}  // Disable on signup/login route
               >
                 Sign Up
               </Button>
-              <Button addClass="" onClick={handleLoginClick}>
+              <Button addClass="" onClick={handleLoginClick} disabled={isAuthRoute}>
                 Login
               </Button>
             </Box>
@@ -87,14 +88,13 @@ const Navbar = () => {
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Button
-
-            addClass="secondaryBtn"
+              addClass="secondaryBtn"
               onClick={handleSignupClick}
+              disabled={isAuthRoute}  // Disable on signup/login route
             >
               Sign Up
             </Button>
-            <Button addClass="primaryBtn" onClick={handleLoginClick}
-            >
+            <Button addClass="primaryBtn" onClick={handleLoginClick} disabled={isAuthRoute}>
               Login
             </Button>
           </Box>
