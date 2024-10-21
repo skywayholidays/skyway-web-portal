@@ -3,11 +3,11 @@ import { TextField, Button, Typography, CircularProgress, Box, Container, IconBu
 import { FaUser, FaLock } from 'react-icons/fa';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { _create } from '../../utils/apiUtils';
-import { useNavigate } from 'react-router-dom'; // useNavigate instead of useHistory
+import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
 
-const Signup = () => {
-  const navigate = useNavigate(); // useNavigate for navigation
+const Login = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -28,13 +28,21 @@ const Signup = () => {
     }
 
     try {
-      await _create('/auth/register', { email, password });
-      setSuccessMessage('Registration successful!');
+      const response = await _create('/auth/login', { email, password });
+      const { token, _id, first_name, last_name } = response;
+
+      // Save token in localStorage
+      localStorage.setItem('token', token);
+      // Save user details in localStorage as a JSON string
+      localStorage.setItem('user', JSON.stringify({ _id, first_name, last_name, email }));
+
+      setSuccessMessage('Login successful!');
+
       setTimeout(() => {
-        navigate('/login'); 
+        navigate('/admin-dashboard');
       }, 2000);
     } catch (error) {
-      setGeneralError(error?.response?.data?.message || 'An error occurred. Please try again.');
+      setGeneralError(error?.response?.data?.message || 'Invalid email or password');
     } finally {
       setLoading(false);
     }
@@ -45,11 +53,11 @@ const Signup = () => {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff' }}> {/* Set background to white */}
+    <Container maxWidth="sm" sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff' }}>
       <Box
         sx={{
           padding: 4,
-          backgroundColor: '#ffffff', // Set background to white
+          backgroundColor: '#ffffff',
           borderRadius: 2,
           boxShadow: 3,
           width: '100%',
@@ -58,7 +66,7 @@ const Signup = () => {
         }}
       >
         <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: 'black' }}>
-          Register
+          Login
         </Typography>
 
         {successMessage && (
@@ -84,7 +92,7 @@ const Signup = () => {
             InputProps={{
               startAdornment: <FaUser style={{ marginRight: 8 }} />,
             }}
-            sx={{ backgroundColor: '#ffffff', fontSize: '0.9rem', mb: 2 }} // Set background to white
+            sx={{ backgroundColor: '#ffffff', fontSize: '0.9rem', mb: 2 }}
           />
           <TextField
             fullWidth
@@ -104,24 +112,26 @@ const Signup = () => {
                 </InputAdornment>
               ),
             }}
-            sx={{ backgroundColor: '#ffffff', fontSize: '0.9rem', mb: 2 }} // Set background to white
+            sx={{ backgroundColor: '#ffffff', fontSize: '0.9rem', mb: 2 }}
           />
           {loading ? (
             <CircularProgress size={24} sx={{ marginTop: 2 }} />
           ) : (
-            <Button type="submit" fullWidth variant="contained" sx={{ fontSize: '0.9rem', marginTop: 2, backgroundColor:'#24AB70',
-            '&:hover': {
-              backgroundColor: '#22C55E', // Hover color
-            }, }}>
-              Register
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ fontSize: '0.9rem', marginTop: 2, backgroundColor: '#24AB70', '&:hover': { backgroundColor: '#22C55E' } }}
+            >
+              Login
             </Button>
           )}
         </form>
 
         <Typography variant="body2" sx={{ mt: 2 }}>
-          <span>Already have an account? </span>
-          <Link href="/login" sx={{ textDecoration: 'none', color: '#1976d2' }}>
-            Login here
+          <span>Not a user? </span>
+          <Link href="/signup" sx={{ textDecoration: 'none', color: '#1976d2' }}>
+            Sign up here
           </Link>
         </Typography>
       </Box>
@@ -129,4 +139,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

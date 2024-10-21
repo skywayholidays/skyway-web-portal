@@ -1,13 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
 import ReservationForm from './components/ReservationForm';
+import Login from './components/Login/Login';
 
-const App = () => {
+const MainApp = () => {
+  const location = useLocation();
+  const isAuthRoute = location.pathname === '/signup' || location.pathname === '/login';
+
   return (
-    <Router>
-      <Navbar />
+    <>
+      {/* Pass isAuthRoute to Navbar to control button visibility */}
+      <Navbar isAuthRoute={isAuthRoute} />
       <Routes>
-        {/* Home Route */}
         <Route path="/" element={
           <>
             <HeroSection />
@@ -19,18 +23,14 @@ const App = () => {
           </>
         } />
 
-        {/* Rooms Route */}
         <Route path="/rooms" element={
           <>
-            <HeroSection /> {/* Add or replace with the Rooms section if needed */}
+            <HeroSection />
             <PopularHotelSection />
           </>
         } />
 
-        {/* About Route */}
         <Route path="/about" element={<HistorySection />} />
-
-        {/* Events Route */}
         <Route path="/events" element={
           <>
             <TestimonialSection />
@@ -38,20 +38,29 @@ const App = () => {
           </>
         } />
 
-        {/* Reservation Route */}
         <Route path="/reservation" element={
           <>
-        <FacilitiesSection />
-        <ReservationForm/>
-        </>
+            <FacilitiesSection />
+            <ReservationForm />
+          </>
         } />
+        
         <Route path="/signup" element={<Signup />} />
-        {/* Contact Route */}
+        <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<LocationSection />} />
       </Routes>
-      <FooterSection />
+      {/* Footer is hidden when on signup or login routes */}
+      {!isAuthRoute && <FooterSection />}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <MainApp />
     </Router>
   );
-}
+};
 
 export default App;
