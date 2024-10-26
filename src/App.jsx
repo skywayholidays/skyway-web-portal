@@ -31,12 +31,6 @@ const MainApp = () => {
         } />
 
         <Route path="/about" element={<HistorySection />} />
-        <Route path="/events" element={
-          <>
-            <TestimonialSection />
-            <FacilitiesSection />
-          </>
-        } />
 
         <Route path="/reservation" element={
           <>
@@ -44,13 +38,9 @@ const MainApp = () => {
             <ReservationForm />
           </>
         } />
-        
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<LocationSection />} />
       </Routes>
-      {/* Footer is hidden when on signup or login routes */}
-      {!isAuthRoute && <FooterSection />}
+        <FooterSection/>
     </>
   );
 };

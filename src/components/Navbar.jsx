@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Box } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Box } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
-import Button from "./Button"; // Your custom button component
+import logo from '../assets/images/logo.png';
 
 const Navbar = ({ isAuthRoute }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate();
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -20,37 +18,15 @@ const Navbar = ({ isAuthRoute }) => {
     setAnchorEl(null);
   };
 
-  const handleSignupClick = () => {
-    navigate('/signup');
-  };
-
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
-
   return (
-    <AppBar position="static" sx={{ background: 'transparent', boxShadow: 'none', color: 'black' }}>
-      <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 2, md: "7%" }, height: "75px" }}>
-        <Typography variant="h6" component="div">
-          Skyway Holidays
-        </Typography>
+    <AppBar position="sticky" sx={{ background: 'white', boxShadow: 'none', color: 'black' }}>
+      <Toolbar className="py-1" sx={{ justifyContent: 'space-between', px: { xs: 2, md: "7%" }, height: "auto" }}>
+        <Box component="a" href="/" sx={{ display: 'flex', alignItems: 'center' }}>
+          <img src={logo} alt="Skyway Holidays Logo" style={{ height: '80px', width: 'auto' }} />
+        </Box>
 
         {isMobile ? (
           <>
-            <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 2 }}>
-              <Button
-                addClass="bg-white/30 border border-black"
-                sx={{ color: 'black' }}
-                onClick={handleSignupClick}
-                disabled={isAuthRoute}  // Disable on signup/login route
-              >
-                Sign Up
-              </Button>
-              <Button addClass="" onClick={handleLoginClick} disabled={isAuthRoute}>
-                Login
-              </Button>
-            </Box>
-
             <IconButton
               edge="end"
               color="black"
@@ -67,36 +43,17 @@ const Navbar = ({ isAuthRoute }) => {
               onClose={handleMenuClose}
             >
               <MenuItem onClick={handleMenuClose}><a href="/">Home</a></MenuItem>
-              <MenuItem onClick={handleMenuClose}><a href="/rooms">Rooms</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/about">About</a></MenuItem>
-              <MenuItem onClick={handleMenuClose}><a href="/events">Events</a></MenuItem>
-              <MenuItem onClick={handleMenuClose}><a href="/reservation">Reservation</a></MenuItem>
+              <MenuItem onClick={handleMenuClose}><a href="/reservation">Internationals</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/contact">Contact</a></MenuItem>
             </Menu>
           </>
         ) : (
-          <Box sx={{ display: 'flex', gap: 4 }}>
+          <Box sx={{ display: 'flex', gap: 4 }} className="text-xl">
             <a href="/">Home</a>
-            <a href="/rooms">Rooms</a>
             <a href="/about">About</a>
-            <a href="/events">Events</a>
-            <a href="/reservation">Reservation</a>
+            <a href="/reservation">Internationals</a>
             <a href="/contact">Contact</a>
-          </Box>
-        )}
-
-        {!isMobile && (
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button
-              addClass="secondaryBtn"
-              onClick={handleSignupClick}
-              disabled={isAuthRoute}  // Disable on signup/login route
-            >
-              Sign Up
-            </Button>
-            <Button addClass="primaryBtn" onClick={handleLoginClick} disabled={isAuthRoute}>
-              Login
-            </Button>
           </Box>
         )}
       </Toolbar>
