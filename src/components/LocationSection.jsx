@@ -32,7 +32,7 @@ const Location = () => {
 					</MapContainer>
 					{/* </div> */}
 				</div>
-				<div className="location-box relative z-[401] max-md:hidden ">
+				<div className="location-box relative z-[401] max-md:hidden">
 					<div className="absolute bg-white mx-11 rounded-2xl gap-28 flex p-11 bottom-[30px]">
 						<div className="location-box-left w-1/2">
 							<h2 className="leading-[50px] text-[40px] font-semibold">

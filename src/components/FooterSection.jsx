@@ -38,7 +38,7 @@ const Footr = () => {
         color: '#555555' // Adjust text color for better visibility
       }}
     >
-      <Container maxWidth="lg" className="backdrop-blur-sm bg-white/60 rounded-md" >
+      <Container maxWidth="lg" className="myBlur rounded-md" >
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <img src={logo} alt="Skyway Holidays Logo" style={{ width: '12rem' }} />
