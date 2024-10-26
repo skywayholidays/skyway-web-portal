@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
+import { Navbar, Hero, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
 import ReservationForm from './components/ReservationForm';
 import Login from './components/Login/Login';
 
@@ -14,7 +14,7 @@ const MainApp = () => {
       <Routes>
         <Route path="/" element={
           <>
-            <HeroSection />
+            <Hero />
             <PopularHotelSection />
             <FacilitiesSection />
             <HistorySection />
@@ -25,7 +25,7 @@ const MainApp = () => {
 
         <Route path="/rooms" element={
           <>
-            <HeroSection />
+            <Hero />
             <PopularHotelSection />
           </>
         } />

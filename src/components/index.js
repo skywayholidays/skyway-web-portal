@@ -1,4 +1,5 @@
 import Navbar from "./Navbar"
+import Hero from "./Hero"
 import HeroSection from "./HeroSection"
 import TestimonialSection from "./TestimonialSection"
 import FacilitiesSection from "./FacilitiesSection"
@@ -8,5 +9,5 @@ import PopularHotelSection from "./PopularHotelSection"
 import HistorySection from "./HistorySection"
 import Signup from "./Signup/Signup"
 
-export { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup}
+export { Navbar, Hero, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup}
 
