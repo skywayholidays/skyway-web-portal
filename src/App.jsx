@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar, HeroSection, FacilitiesSection, LocationSection, FooterSection, HistorySection} from './components';
+import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup, Hero } from './components';
 import ReservationForm from './components/ReservationForm';
 import Internationals from './components/Internationals';
 import IndiaImage from './components/IndiaImage';
@@ -16,10 +16,13 @@ const MainApp = () => {
       <Routes>
         <Route path="/" element={
           <>
-            <HeroSection />
+            
+            <Hero />
             <Internationals/>
             <IndiaImage/>
             <Tagline/>
+            {/* <HeroSection /> */}
+            <PopularHotelSection />
             <FacilitiesSection />
             <LocationSection />
           </>
