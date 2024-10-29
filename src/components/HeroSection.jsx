@@ -1,14 +1,17 @@
 import React from "react";
-import "./heroSection.css"; // Import CSS file
+import "./HeroSection.css"; // Import CSS file
+import Button from "./Button"; // Import Button component
 
 const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <div className="hero-text">
-          <h1>Welcome to Our Website</h1>
+        <div className="hero-text ">
+          <h1 className="font-semibold text-4xl">Welcome to Our Website</h1>
           <p>Your journey to excellence starts here. Let us help you achieve your dreams.</p>
-          <button className="action-button">Get Started</button>
+          <Button addClass="secondaryBtn">
+              Get Started
+            </Button>
         </div>
         <div className="contact-form">
           <h2>Contact Us</h2>
@@ -23,9 +26,11 @@ const HeroSection = () => {
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows="2" placeholder="Your Message" required></textarea>
+              <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" className="submit-button">Send Message</button>
+            <Button>
+              Send Message
+            </Button>
           </form>
         </div>
       </div>
