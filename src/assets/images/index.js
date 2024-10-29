@@ -5,6 +5,12 @@ import ImageHotel2 from './hotel2.png';
 import ImageHotel3 from './hotel3.png';
 import ImagePerson from './person.png';
 import ImageUser from './user.png';
+import Thailand from './Thailand.jpg';
+import Bali from './Bali.jpg';
+import Dubai from './Dubai.jpg';
+import India from './India.jpg';
+import Malaysia from './Malaysia.jpg';
+import Maldivs from './Maldivs.jpg'
 
 export {
   ImageDiscovery,
@@ -14,4 +20,10 @@ export {
   ImageHotel3,
   ImagePerson,
   ImageUser,
+  Thailand,
+  Bali,
+  Dubai,
+  India,
+  Malaysia,
+  Maldivs
 };

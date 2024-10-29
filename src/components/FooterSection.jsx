@@ -10,7 +10,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import logo from '../assets/images/logo.png';
 import footerimage from '../assets/images/footer1.jpg'
 
-const Footr = () => {
+
+const FooterSection = () => {
   const importantLinks = [
     { href: "#", label: "Home" },
     { href: "/aboutus", label: "About Us" },
@@ -111,4 +112,4 @@ const Footr = () => {
   );
 }
 
-export default Footr;
+export default FooterSection;
