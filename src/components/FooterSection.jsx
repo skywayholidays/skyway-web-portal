@@ -30,7 +30,7 @@ const Footr = () => {
   return (
     <div
       style={{
-        width: '100vw',
+        width: 'svw',
         padding: '2rem 0',
         backgroundImage:`url(${footerimage})`, // Replace with your image URL
         backgroundSize: 'cover',

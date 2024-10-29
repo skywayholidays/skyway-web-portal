@@ -5,7 +5,7 @@ import FacilitiesSection from "./FacilitiesSection"
 import LocationSection from "./LocationSection"
 import FooterSection from "./FooterSection"
 import PopularHotelSection from "./PopularHotelSection"
-import HistorySection from "./HistorySection"
+import HistorySection from "./About"
 import Signup from "./Signup/Signup"
 
 export { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup}
