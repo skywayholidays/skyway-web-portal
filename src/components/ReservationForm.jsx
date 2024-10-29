@@ -3,6 +3,7 @@ import {
     Container,
     Grid,
     TextField,
+    Button,
     Select,
     MenuItem,
     Typography,
@@ -11,7 +12,7 @@ import {
     TextareaAutosize,
     Box,
 } from '@mui/material';
-import Button from './Button';
+
 
 const Reservationform = () => {
     return (
@@ -70,7 +71,13 @@ const Reservationform = () => {
                                 variant="contained"
                                 size="large"
                                 fullWidth
-                                
+                                sx={{
+                                    backgroundColor: '#24AB70',
+                                    ':hover': {
+                                        backgroundColor: '#22C55E',
+                                    },
+                                    color: 'white',
+                                }}
                             >
                                 Reserve Now
                             </Button>

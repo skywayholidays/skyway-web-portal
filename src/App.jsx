@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar, Hero, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
+import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup } from './components';
 import ReservationForm from './components/ReservationForm';
 import Login from './components/Login/Login';
 
@@ -9,24 +9,15 @@ const MainApp = () => {
 
   return (
     <>
-      {/* Pass isAuthRoute to Navbar to control button visibility */}
+      
       <Navbar isAuthRoute={isAuthRoute} />
       <Routes>
         <Route path="/" element={
           <>
-            <Hero />
+            <HeroSection />
             <PopularHotelSection />
             <FacilitiesSection />
-            <HistorySection />
-            <TestimonialSection />
             <LocationSection />
-          </>
-        } />
-
-        <Route path="/rooms" element={
-          <>
-            <Hero />
-            <PopularHotelSection />
           </>
         } />
 
