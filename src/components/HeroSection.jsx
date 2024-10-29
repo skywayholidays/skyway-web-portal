@@ -61,7 +61,7 @@ const HeroSection = () => {
               <button className='hero-cta h-10 w-10 bg-white rounded-[50%] mr-4'>
                 <img src={IconWatchVideo} alt="Watch Video Icon" />
               </button>
-              <div className='text-xl font-semibold'>Watch video</div>
+              <div className='text-xl font-semibold'>Watch videos</div>
             </div>
           </div>
           <div className='hero-right'>
