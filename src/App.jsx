@@ -9,7 +9,7 @@ const MainApp = () => {
 
   return (
     <>
-      {/* Pass isAuthRoute to Navbar to control button visibility */}
+      
       <Navbar isAuthRoute={isAuthRoute} />
       <Routes>
         <Route path="/" element={
@@ -17,8 +17,6 @@ const MainApp = () => {
             <HeroSection />
             <PopularHotelSection />
             <FacilitiesSection />
-            <HistorySection />
-            <TestimonialSection />
             <LocationSection />
           </>
         } />
