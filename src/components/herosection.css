@@ -1,82 +1,97 @@
-.hero-section{
-  font-family: 'Open Sans', sans-serif;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+/* Hero section styling */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f4f990;
 }
 
-.hero-option{
-  box-shadow: 0px 22px 38px rgba(0, 34, 19, 0.08);
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
-.vertical-line{
-  border-left: 2px solid #E8E8E8;
-  height: 100%;
+.hero-text,
+.contact-form {
+  flex: 1;
 }
 
-
-/* react select style */
-.basic-single .select__control{
-  border: none !important;
-  /* margin-left: -20px;
-  padding-left: 10px;
-  padding-right: 10px; */
-  min-height: 14px;
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.basic-single .select__control:focus {
-  border: none !important;
-  /* margin-left: -20px;
-  padding-left: 10px;
-  padding-right: 10px; */
+.hero-text p {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 1rem;
 }
 
-.basic-single .select__control--is-focused {
-  border: none !important;
-  min-height: 14px;
+.action-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.basic-single .select__control--menu-is-open {
-  border: none !important;
-  min-height: 14px;
+.contact-form h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.basic-single .select__dropdown-indicator {
-  display: none !important;
+.form-group {
+  margin-bottom: 1rem;
 }
 
-.basic-single .select__indicator-separator {
-  display: none !important;
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
 }
 
-.basic-single .select__clear-indicator {
-  display: none !important;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
 }
 
-.basic-single .select__value-container {
-  margin-left: -10px;
-  /* padding-right: 20px; */
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.basic-single .select__clear-indicator {
-  margin-right: -10px;
+/* Responsive styling */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+  }
 }
 
-.select__menu {
-  width: 300px !important;
-}
+@media (max-width: 767px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 
-
-/* react datepicker */
-.react-datepicker-wrapper{
-  /* width: 50% !important; */
-}
-
-
-.react-datepicker-wrapper .react-datepicker__input-container input{
-  width: 100% !important;
-}
-
-
-.react-datepicker-wrapper .react-datepicker-ignore-onclickoutside{
-  width: 50% !important;
+  .contact-form h2 {
+    font-size: 1.5rem;
+  }
 }
