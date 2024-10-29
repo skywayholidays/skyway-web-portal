@@ -14,7 +14,10 @@ module.exports = {
         black_3:"#555555",
         white_1:'#fff',
         white_2:'#f6fcf9',
-      }
+      },
+      height: {
+        '80vh': '80vh',
+      },
     },
   },
   plugins: [],
