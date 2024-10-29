@@ -10,7 +10,6 @@ export default function ImageSlider() {
     { src: image2, alt: 'Taj Mahal' },
     { src: image3, alt: 'Ibiza' },
     { src: image4, alt: 'Ankor Wat' },
-    { src: image1, alt: 'Austin Fireworks' },
   ]
 
   useEffect(() => {
@@ -22,7 +21,7 @@ export default function ImageSlider() {
   }, [])
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg shadow-lg aspect-video">
+    <div className="relative w-full overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -37,6 +36,7 @@ export default function ImageSlider() {
         ))}
       </div>
       <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        hii
         {images.map((_, index) => (
           <button
             key={index}
