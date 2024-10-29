@@ -31,7 +31,7 @@ const FooterSection = () => {
   return (
     <div
       style={{
-        width: 'svw',
+        width: '100vw',
         padding: '2rem 0',
         backgroundImage:`url(${footerimage})`, // Replace with your image URL
         backgroundSize: 'cover',
