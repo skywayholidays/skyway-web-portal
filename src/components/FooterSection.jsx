@@ -14,7 +14,7 @@ import footerimage from '../assets/images/footer1.jpg'
 const FooterSection = () => {
   const importantLinks = [
     { href: "#", label: "Home" },
-    { href: "/aboutus", label: "About Us" },
+    { href: "/about", label: "About Us" },
     { href: "#", label: "International" },
     { href: "/contact", label: "Contact Us" }
   ];

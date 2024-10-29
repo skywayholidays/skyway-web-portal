@@ -10,7 +10,8 @@ import Bali from './Bali.jpg';
 import Dubai from './Dubai.jpg';
 import India from './India.jpg';
 import Malaysia from './Malaysia.jpg';
-import Maldivs from './Maldivs.jpg'
+import Maldivs from './Maldivs.jpg';
+import IncredibleIndia from './incredible_india_img.jpg';
 
 export {
   ImageDiscovery,
@@ -25,5 +26,6 @@ export {
   Dubai,
   India,
   Malaysia,
-  Maldivs
+  Maldivs,
+  IncredibleIndia
 };
