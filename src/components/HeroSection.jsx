@@ -1,5 +1,5 @@
 import React from "react";
-import "./heroSection.css"; // Import CSS file
+import "../Style/HeroSection.css"
 import Button from "./Button"; // Import Button component
 import ContactForm from "./ContactForm";
 
