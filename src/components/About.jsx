@@ -1,6 +1,5 @@
 import about from '../assets/images/about.jpg';
 import aboutCard from  '../assets/images/aboutCard.jpg';
-import FlipCardGrid from './FlipCards';
 
 export default function AboutUs() {
     return (
@@ -65,7 +64,6 @@ export default function AboutUs() {
             />
           </div>
         </div>
-        <FlipCardGrid/>
       </div>
     )
   }
