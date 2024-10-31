@@ -10,13 +10,6 @@ import image2 from './2.jpg';
 import image3 from './3.jpg';
 import image4 from './4.jpg';
 
-import Thailand from './Thailand.jpg';
-import Bali from './Bali.jpg';
-import Dubai from './Dubai.jpg';
-import India from './India.jpg';
-import Malaysia from './Malaysia.jpg';
-import Maldivs from './Maldivs.jpg';
-import IncredibleIndia from './incredible_india_img.jpg';
 
 export {
   ImageDiscovery,
@@ -29,12 +22,5 @@ export {
   image1,
   image2,
   image3,
-  image4,
-  Thailand,
-  Bali,
-  Dubai,
-  India,
-  Malaysia,
-  Maldivs,
-  IncredibleIndia
+  image4
 };

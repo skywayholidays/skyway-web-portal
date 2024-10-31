@@ -10,11 +10,10 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import logo from '../assets/images/logo.png';
 import footerimage from '../assets/images/footer1.jpg'
 
-
-const FooterSection = () => {
+const Footr = () => {
   const importantLinks = [
     { href: "#", label: "Home" },
-    { href: "/about", label: "About Us" },
+    { href: "/aboutus", label: "About Us" },
     { href: "#", label: "International" },
     { href: "/contact", label: "Contact Us" }
   ];
@@ -31,7 +30,7 @@ const FooterSection = () => {
   return (
     <div
       style={{
-        width: '100vw',
+        width: 'svw',
         padding: '2rem 0',
         backgroundImage:`url(${footerimage})`, // Replace with your image URL
         backgroundSize: 'cover',
@@ -112,4 +111,4 @@ const FooterSection = () => {
   );
 }
 
-export default FooterSection;
+export default Footr;

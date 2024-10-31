@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, HeroSection, FacilitiesSection, TestimonialSection, LocationSection, FooterSection, PopularHotelSection, HistorySection, Signup, Hero } from './components';
 import ReservationForm from './components/ReservationForm';
-import Internationals from './components/Internationals';
-import IndiaImage from './components/IndiaImage';
-import Tagline from './components/Tagline';
+import Login from './components/Login/Login';
+
 
 const MainApp = () => {
   const location = useLocation();
@@ -16,11 +15,7 @@ const MainApp = () => {
       <Routes>
         <Route path="/" element={
           <>
-            
             <Hero />
-            <Internationals/>
-            <IndiaImage/>
-            <Tagline/>
             {/* <HeroSection /> */}
             <PopularHotelSection />
             <FacilitiesSection />

@@ -4,11 +4,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-#root{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-}
-
