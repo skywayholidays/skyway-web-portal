@@ -12,6 +12,12 @@ import India from './India.jpg';
 import Malaysia from './Malaysia.jpg';
 import Maldivs from './Maldivs.jpg';
 import IncredibleIndia from './incredible_india_img.jpg';
+import image1 from './1.jpg';
+import image2 from './2.jpg';
+import image3 from './3.jpg';
+import image4 from './4.jpg';
+
+
 
 export {
   ImageDiscovery,
@@ -27,5 +33,9 @@ export {
   India,
   Malaysia,
   Maldivs,
-  IncredibleIndia
+  IncredibleIndia,
+  image1,
+  image2,
+  image3,
+  image4
 };
