@@ -17,14 +17,13 @@ const ContactForm = () => {
 				<Box
 					component="form"
 					sx={{
-						p: 5,
-						border: "1px solid #e0e0e0",
+						p: 2,
 						borderRadius: 2,
-						boxShadow: 1,
+
 					}}
                     className="bg-white"
 				>
-					<Grid container spacing={2}>
+					<Grid container spacing={1}>
 						<Grid item xs={12} sm={6}>
 							<TextField
 								fullWidth

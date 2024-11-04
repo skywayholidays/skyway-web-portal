@@ -1,9 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar, Hero, FacilitiesSection, LocationSection, FooterSection, HistorySection} from './components';
+import { Navbar, Hero, FooterSection, HistorySection} from './components';
 import ReservationForm from './components/ReservationForm';
 import Internationals from './components/Internationals';
 import IndiaImage from './components/IndiaImage';
 import Tagline from './components/Tagline';
+import Incrementor from './components/Incrementor';
+import ContactUs from './components/Contact';
+import Location from './components/LocationSection';
+import Quote from './components/Quote';
 
 const MainApp = () => {
   const location = useLocation();
@@ -20,8 +24,9 @@ const MainApp = () => {
             <Internationals/>
             <IndiaImage/>
             <Tagline/>
-            <FacilitiesSection />
-            <LocationSection />
+            <Incrementor/>
+            <Quote/>
+           <Location/>
           </>
         } />
 
@@ -29,11 +34,15 @@ const MainApp = () => {
 
         <Route path="/reservation" element={
           <>
-            <FacilitiesSection />
             <ReservationForm />
           </>
         } />
-        <Route path="/contact" element={<LocationSection />} />
+        <Route path="/contact" element=
+        {<>
+        <ContactUs/>
+        <Location/>
+        </>
+        } />
       </Routes>
         <FooterSection/>
     </>

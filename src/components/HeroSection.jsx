@@ -9,14 +9,12 @@ const HeroSection = () => {
 		<section className="hero-section">
 			<div className="hero-content">
 				<div className="hero-text ">
-					<h1 className="font-semibold text-4xl">
-						Welcome to Our Websites
+					<h1 className="font-bold">
+						Welcome to Skywayholidays
 					</h1>
 					<p>
-						Your journey to excellence starts here. Let us help you
-						achieve your dreams.
+					Planing Trip To Anywhere in The World?
 					</p>
-					<Button>Get Started</Button>
 				</div>
 				
 				<ContactForm />

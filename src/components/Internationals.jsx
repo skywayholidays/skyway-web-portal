@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Grid, Paper } from "@mui/material";
 import Tilt from 'react-parallax-tilt';
-import { Thailand,Bali,India,Dubai,Malaysia,Maldivs } from "../assets/images";
+import { Thailand, Bali, India, Dubai, Malaysia, Maldivs } from "../assets/images";
 
 const Contaries = [
     {
@@ -47,18 +47,18 @@ const Internationals = () => {
         <Box sx={{
             textAlign: 'justify',
             color: '#12141d',
-            display: { xs: 'flex', md: 'flex' }, // Responsive display property
-            flexDirection: { xs: 'column', md: 'column' }, // Responsive flex direction
-            alignItems: { xs: 'center', md: 'center' }, // Responsive align items
-            maxWidth:'lg',
-            padding:'2rem'
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            maxWidth: 'lg',
+            padding: '2rem'
         }}>
             <Typography variant="h3" component="h3" sx={{ marginBottom: '2rem', fontWeight: 'bold' }}>
-            AWESOME INTERNATIONAL TOURS
+                AWESOME INTERNATIONAL TOURS
             </Typography>
-            <Grid container spacing={6} className=" px-3 md:px-0">
-                {Contaries.map((countary, index) => (
-                    <Grid item xs={6} sm={6} md={4} key={index}>
+            <Grid container spacing={4} className="px-3 md:px-0">
+                {Contaries.map((country, index) => (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
                         <Tilt tiltMaxAngleX={30} tiltMaxAngleY={20} glareEnable={true} glareMaxOpacity={0.8} glareColor="lightblue" glarePosition="all">
                             <Paper
                                 elevation={3}
@@ -66,8 +66,8 @@ const Internationals = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    height: { xs: '250px', md: '27rem' }, // Responsive height
-                                    padding: {xs:'2.2rem',md:'1rem'},
+                                    height: '100%', // Ensures the card takes full height
+                                    padding: '1rem',
                                     borderRadius: '8px',
                                     border: '2px solid lightgray',
                                     position: 'relative',
@@ -77,24 +77,22 @@ const Internationals = () => {
                                     }
                                 }}
                             >
-                                <img src={countary.image} alt={countary.title} style={{ borderRadius: '8px', width: '35rem', height: 'auto', maxHeight: '5050px' }} />
-                                <Typography variant="h6" component="h3" sx={{ fontWeight: 'bold', marginTop:{xs:'0.2rem',md:'1rem'}, textAlign: 'center',fontSize:{xs:'1rem',md:'1.3rem'} }}>
-                                    {countary.title}
+                                <img src={country.image} alt={country.title} style={{ borderRadius: '8px', width: '100%', maxHeight: '250px', objectFit: 'cover' }} />
+                                <Typography variant="h6" component="h3" sx={{ fontWeight: 'bold', marginTop: '1rem', textAlign: 'center' }}>
+                                    {country.title}
                                 </Typography>
-                                <Box sx={{ textAlign: 'center', marginTop: '1rem', display: { xs: 'none', md: 'block' } }}>
-                                    <Typography variant="body2" color="text.secondary" sx={{ marginTop: '0.5rem' }}>
-                                        {countary.description}
-                                    </Typography>
-                                    <Typography
-                                        variant="body2"
-                                        color="#22C55E"
-                                        sx={{ marginTop: '1rem', cursor: 'pointer' }}
-                                        component="a"
-                                        href={countary.link}
-                                    >
-                                        Show More ➔
-                                    </Typography>
-                                </Box>
+                                <Typography variant="body2" color="text.secondary" sx={{ marginTop: '0.5rem', textAlign: 'center' }}>
+                                    {country.description}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    color="#22C55E"
+                                    sx={{ marginTop: '1rem', cursor: 'pointer', textAlign: 'center' }}
+                                    component="a"
+                                    href={country.link}
+                                >
+                                    Show More ➔
+                                </Typography>
                             </Paper>
                         </Tilt>
                     </Grid>

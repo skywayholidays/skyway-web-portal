@@ -1,6 +1,5 @@
-import { IconBreakfast, IconElectricity, IconExercise, IconOtherService, IconParkingArea, IconPrivateWorkspace, IconSwimmingpool, IconWifi } from "../assets/icons"
-import Button from "./Button"
-import './facilitiessection.css'
+import { IconBreakfast, IconElectricity, IconExercise, IconOtherService, IconParkingArea, IconPrivateWorkspace, IconSwimmingpool, IconWifi } from "../assets/icons";
+import Button from "./Button";
 
 const Facilities = () => {
   const dynamicFacilitiesData = [
@@ -44,39 +43,35 @@ const Facilities = () => {
       title: "Other Service",
       link: null
     },
-  ]
+  ];
 
-  const FacilitiesBox = (props) => {
+  const FacilitiesBox = ({ icon, title }) => {
     return (
-    <>
-        <div className={`facilities-box flex justify-center items-center w-[193px] h-[193px] rounded-lg ${props.addClass}` }>
-          <div className="">
-            <img src={props.icon} className="mx-auto" alt={`${props.title} Icon`} />
-            <p className="mt-6">{props.title}</p>
-        </div>
+      <div className="facilities-box flex flex-col justify-center items-center w-[193px] h-[193px] rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+        <img src={icon} className="mx-auto" alt={`${title} Icon`} />
+        <p className="mt-6 text-center">{title}</p>
       </div>
-    </>)
-  }
+    );
+  };
 
   return (
-    <>
-      <div className="md:container md:mx-auto max-md:mx-10 flex mt-36 max-md:flex-col">
-        <div className="facilities-left w-2/6 h-full pr-8 max-md:w-full">
-          <h2 className="leading-[50px] text-[40px] font-semibold max-md:text-2xl">We do our best facilities provide you</h2>
-          <p className="mt-5 text-[16ox] text-[#555555] leading-7 max-md:hidden">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
-          <Button addClass={'mt-12 py-4 px-8 rounded-[36px] max-md:hidden'}>
-            Contact Now
-          </Button>
-        </div>
-        <div className="facilities-right w-4/6 grid grid-cols-4 gap-4 max-md:w-full max-sm:grid-cols-2 max-sm:gap-2 max-md:grid-cols-3 max-md:mt-7 max-lg:grid-cols-2 max-xl:grid-cols-3">
-          {dynamicFacilitiesData.map((data, index) => {
-            return <FacilitiesBox key={index} icon={data.icon} title={data.title} addClass=""/>
-          })}
-        </div>
+    <div className="md:container md:mx-auto max-md:mx-10 flex flex-col items-center mt">
+      <div className="text-center mb-8">
+        <h2 className="leading-[50px] text-[40px] font-semibold max-md:text-2xl">We do our best facilities to provide you</h2>
+        <p className="mt-5 text-[16px] text-[#555555] leading-7 max-md:hidden">
+          Experience world-class facilities at Skyway Holidays, your ultimate destination for relaxation and adventure. From luxurious accommodations to top-notch services, we cater to all your needs. Discover stunning locations, indulge in exceptional amenities, and create unforgettable memories. At Skyway Holidays, your dream getaway is just a reservation away!
+        </p>
+        <Button addClass=" py-10 px-8 rounded-[36px] max-md:hidden">
+          Contact Now
+        </Button>
       </div>
-
-    </>
-  )
+      <div className="flex flex-wrap justify-center w-full max-md:grid max-md:grid-cols-2 max-md:gap-4">
+        {dynamicFacilitiesData.map((data, index) => (
+          <FacilitiesBox key={index} icon={data.icon} title={data.title} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Facilities
+export default Facilities;
