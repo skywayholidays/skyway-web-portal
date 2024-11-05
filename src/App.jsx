@@ -8,6 +8,7 @@ import Incrementor from './components/Incrementor';
 import ContactUs from './components/Contact';
 import Location from './components/LocationSection';
 import Quote from './components/Quote';
+import Thailand from './components/Tours/Thailand/Thailand';
 
 const MainApp = () => {
   const location = useLocation();
@@ -34,7 +35,7 @@ const MainApp = () => {
 
         <Route path="/reservation" element={
           <>
-            <ReservationForm />
+            <Thailand/>
           </>
         } />
         <Route path="/contact" element=
