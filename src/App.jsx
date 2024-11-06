@@ -14,6 +14,7 @@ import Dubai from './components/Tours/Dubai/Dubai';
 import India from './components/Tours/India/India';
 import Malaysia from './components/Tours/Malaysia/Malaysia';
 import Maldivs from './components/Tours/Maldivs/Maldivs';
+import ContactInfoBar from './components/ContactInfoBar';
 
 const MainApp = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const MainApp = () => {
 
   return (
     <>
-      
+      <ContactInfoBar/>
       <Navbar isAuthRoute={isAuthRoute} />
       <Routes>
         <Route path="/" element={
