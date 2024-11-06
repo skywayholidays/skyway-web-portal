@@ -8,7 +8,7 @@ const Contaries = [
         image: Thailand,
         title: "Thailand – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "https://r3f-easyjob.vercel.app/"
+        link: "/reservation"
     },
     {
         image: Bali,
