@@ -13,6 +13,7 @@ import Bali from './components/Tours/Bali/Bali';
 import Dubai from './components/Tours/Dubai/Dubai';
 import India from './components/Tours/India/India';
 import Malaysia from './components/Tours/Malaysia/Malaysia';
+import Maldivs from './components/Tours/Maldivs/Maldivs';
 
 const MainApp = () => {
   const location = useLocation();
@@ -64,7 +65,7 @@ const MainApp = () => {
         } />
         <Route path="/maldivs" element={
           <>
-            <Thailand/>
+            <Maldivs/>
           </>
         } />
         <Route path="/contact" element=

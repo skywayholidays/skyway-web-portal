@@ -2,25 +2,28 @@ import React from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const inclusions = [
-    "02 nights in Bangkok",
-    "02 nights in Pattaya",
-    "Breakfast",
-    "Alcazar Show with transfer",
-    "Coral Island tour with lunch",
-    "Bangkok city tour",
-    "BKK Airport - PTY Hotel - BKK Hotel - BKK Airport transfer",
-    "All tour & Transfer on SIC Basis"
+    " 03 Nights Accommodation",
+    " Welcome drink on arrival is included",
+    " Speed Boat Transfer",
+    " 03 Breakfast",
+    " 03 Lunch",
+    " 03 Dinner",
+    " Includes return airport transfers from Male' international airport by SPEED BOAT",
+    "The above rate is valid for stay",
+    " The minimum length of stay is 3 nights",
+    " All local transfers (Airport – Hotel – Airport)"
 ];
 
 const exclusions = [
     "Airfare",
-    "Thailand Visa On-arrival",
+    "Visa On-arrival",
     "Travel Insurance",
     " Goods & Service Tax",
-    " Anything not mentioned in package Inclusions"
+    " Anything not mentioned in package Inclusions",
+    " Applicable Peak Season, Christmas, New year surcharge."
 ];
 
-const InclusionsTab = () => {
+const MalInclusionsTab = () => {
     return (
         <div>
             {/* Inclusions Section */}
@@ -66,4 +69,4 @@ const InclusionsTab = () => {
     );
 };
 
-export default InclusionsTab;
+export default MalInclusionsTab;

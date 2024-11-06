@@ -59,9 +59,9 @@ const Internationals = () => {
             <Grid container spacing={4} className="px-3 md:px-0">
                 {Contaries.map((country, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
-                        <Tilt tiltMaxAngleX={30} tiltMaxAngleY={20} glareEnable={true} glareMaxOpacity={0.8} glareColor="lightblue" glarePosition="all">
+                        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareMaxOpacity={0.8} glareColor="lightblue" glarePosition="all">
                             <Paper
-                                elevation={3}
+                                elevation={10}
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',

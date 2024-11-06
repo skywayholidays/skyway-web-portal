@@ -1,4 +1,3 @@
-// ItineraryItem.jsx
 import React from 'react';
 
 const ItineraryItem = ({ day, title, description }) => {
