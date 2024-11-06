@@ -44,7 +44,7 @@ const Navbar = ({ isAuthRoute }) => {
             >
               <MenuItem onClick={handleMenuClose}><a href="/">Home</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/about">About</a></MenuItem>
-              <MenuItem onClick={handleMenuClose}><a href="/reservation">Internationals</a></MenuItem>
+              <MenuItem onClick={handleMenuClose}><a href="/thailand">Internationals</a></MenuItem>
               <MenuItem onClick={handleMenuClose}><a href="/contact">Contact</a></MenuItem>
             </Menu>
           </>
@@ -52,7 +52,7 @@ const Navbar = ({ isAuthRoute }) => {
           <Box sx={{ display: 'flex', gap: 4 }} className="text-xl">
             <a href="/">Home</a>
             <a href="/about">About</a>
-            <a href="/reservation">Internationals</a>
+            <a href="/thailand">Internationals</a>
             <a href="/contact">Contact</a>
           </Box>
         )}

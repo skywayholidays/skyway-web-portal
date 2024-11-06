@@ -9,6 +9,10 @@ import ContactUs from './components/Contact';
 import Location from './components/LocationSection';
 import Quote from './components/Quote';
 import Thailand from './components/Tours/Thailand/Thailand';
+import Bali from './components/Tours/Bali/Bali';
+import Dubai from './components/Tours/Dubai/Dubai';
+import India from './components/Tours/India/India';
+import Malaysia from './components/Tours/Malaysia/Malaysia';
 
 const MainApp = () => {
   const location = useLocation();
@@ -33,7 +37,32 @@ const MainApp = () => {
 
         <Route path="/about" element={<HistorySection />} />
 
-        <Route path="/reservation" element={
+        <Route path="/thailand" element={
+          <>
+            <Thailand/>
+          </>
+        } />
+        <Route path="/bali" element={
+          <>
+            <Bali/>
+          </>
+        } />
+        <Route path="/dubai" element={
+          <>
+            <Dubai/>
+          </>
+        } />
+        <Route path="/india" element={
+          <>
+            <India/>
+          </>
+        } />
+        <Route path="/malaysia" element={
+          <>
+            <Malaysia/>
+          </>
+        } />
+        <Route path="/maldivs" element={
           <>
             <Thailand/>
           </>

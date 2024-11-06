@@ -8,37 +8,37 @@ const Contaries = [
         image: Thailand,
         title: "Thailand – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/reservation"
+        link: "/thailand"
     },
     {
         image: Bali,
         title: "Bali – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/react"
+        link: "/bali"
     },
     {
         image: Dubai,
         title: "Dubai – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/laravel"
+        link: "/dubai"
     },
     {
         image: Maldivs,
         title: "Maldives – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/laravel"
+        link: "/maldivs"
     },
     {
         image: Malaysia,
         title: "Malaysia – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/laravel"
+        link: "/malaysia"
     },
     {
         image: India,
         title: "India – All Stunning Places",
         description: "6 Days, 5 Nights",
-        link: "/laravel"
+        link: "/india"
     }
 ];
 

@@ -4,12 +4,15 @@ import PhotosTab from './PhotosTab';
 import ItineraryTab from './ItineraryTab';
 import InclusionsTab from './InclusionsTab';
 import CancellationTab from './CancellationTab';
+import EnquireForm from '../EnquireForm';
 
 const Thailand = () => {
     const [activeTab, setActiveTab] = useState("photos");
 
     return (
-        <div className="flex flex-col justify-center w-full py-10 px-4 md:px-20 lg:px-32">
+
+        <div className=' w-full flex justify-center max-w-7xl'>
+        <div className="flex flex-col justify-center w-full py-10 md:px-20">
             <div className="mb-6">
                 <h1 className="text-3xl font-bold">Best Of Thailand</h1>
                 <p className="text-2xl font-semibold text-black_3">4 Nights / 5 Days</p>
@@ -38,6 +41,8 @@ const Thailand = () => {
                 {activeTab === "inclusions" && <InclusionsTab />}
                 {activeTab === "cancellation" && <CancellationTab />}
             </div>
+        </div>
+        <EnquireForm/>
         </div>
     );
 };
