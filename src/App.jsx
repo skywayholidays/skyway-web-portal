@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar, Hero, FooterSection, HistorySection} from './components';
-import ReservationForm from './components/ReservationForm';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar, Hero, FooterSection, HistorySection } from './components';
 import Internationals from './components/Internationals';
 import IndiaImage from './components/IndiaImage';
 import Tagline from './components/Tagline';
@@ -15,25 +14,24 @@ import India from './components/Tours/India/India';
 import Malaysia from './components/Tours/Malaysia/Malaysia';
 import Maldivs from './components/Tours/Maldivs/Maldivs';
 import ContactInfoBar from './components/ContactInfoBar';
+import Resetpassword from './components/Resetpassword';
 
 const MainApp = () => {
-  const location = useLocation();
-  const isAuthRoute = location.pathname === '/signup' || location.pathname === '/login';
 
   return (
     <>
-      <ContactInfoBar/>
-      <Navbar isAuthRoute={isAuthRoute} />
+      <ContactInfoBar />
+      <Navbar />
       <Routes>
         <Route path="/" element={
           <>
             <Hero />
-            <Internationals/>
-            <IndiaImage/>
-            <Tagline/>
-            <Incrementor/>
-            <Quote/>
-           <Location/>
+            <Internationals />
+            <IndiaImage />
+            <Tagline />
+            <Incrementor />
+            <Quote />
+            <Location />
           </>
         } />
 
@@ -41,42 +39,47 @@ const MainApp = () => {
 
         <Route path="/thailand" element={
           <>
-            <Thailand/>
+            <Thailand />
           </>
         } />
         <Route path="/bali" element={
           <>
-            <Bali/>
+            <Bali />
           </>
         } />
         <Route path="/dubai" element={
           <>
-            <Dubai/>
+            <Dubai />
           </>
         } />
         <Route path="/india" element={
           <>
-            <India/>
+            <India />
           </>
         } />
         <Route path="/malaysia" element={
           <>
-            <Malaysia/>
+            <Malaysia />
           </>
         } />
         <Route path="/maldivs" element={
           <>
-            <Maldivs/>
+            <Maldivs />
           </>
         } />
         <Route path="/contact" element=
-        {<>
-        <ContactUs/>
-        <Location/>
-        </>
-        } />
+          {<>
+            <ContactUs />
+            <Location />
+          </>
+          } />
+        <Route path="/resetpassword" element=
+          {<>
+            <Resetpassword/>
+          </>
+          } />
       </Routes>
-        <FooterSection/>
+      <FooterSection />
     </>
   );
 };
