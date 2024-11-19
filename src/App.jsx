@@ -73,7 +73,7 @@ const MainApp = () => {
             <Location />
           </>
           } />
-        <Route path="/resetpassword" element=
+        <Route path="/reset-password" element=
           {<>
             <Resetpassword/>
           </>
