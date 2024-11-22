@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -13,14 +14,15 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { styled } from '@mui/system';
+import axios from 'axios';
 
 const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
     width: '100%',
     maxWidth: 400,
     margin: theme.spacing(2),
-    maxHeight: '60vh', // Ensure responsiveness by limiting height
-    overflowY: 'auto', // Allow scrolling if content overflows
+    maxHeight: '60vh',
+    overflowY: 'auto',
   },
 }));
 
@@ -62,15 +64,43 @@ const PasswordStrengthIndicator = ({ password }) => {
   );
 };
 
-export default function Resetpassword() {
+export default function ResetPassword() {
   const [open, setOpen] = useState(true);
   const fullScreen = useMediaQuery('(max-width:600px)');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const tokenParam = queryParams.get('token');
+    if (tokenParam) {
+      setToken(tokenParam);
+    } else {
+      alert('Invalid token or link');
+      navigate('/'); // Redirect to home if token is missing
+    }
+  }, [location, navigate]);
 
   const handleClose = (event, reason) => {
     if (reason === 'backdropClick') {
       return; // Prevent closing on backdrop click
     }
     setOpen(false);
+  };
+
+  const resetPassword = async (data) => {
+    try {
+      const response = await axios.post(
+        'https://skyway-holidays-backend-api.onrender.com/api/v1/auth/reset-password',
+        data
+      );
+      alert(response.data.message || 'Password reset successful!');
+      navigate('/'); // Redirect to home on success
+    } catch (error) {
+      console.error('Error resetting password:', error);
+      alert(error.response?.data?.message || 'Password reset failed!');
+    }
   };
 
   return (
@@ -81,11 +111,9 @@ export default function Resetpassword() {
           initialValues={{ newPassword: '', confirmPassword: '' }}
           validationSchema={passwordSchema}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              console.log('Password reset submitted:', values);
-              setSubmitting(false);
-              setOpen(false); // Close dialog only on successful submission
-            }, 500);
+            setSubmitting(true);
+            resetPassword({ token, password: values.newPassword });
+            setSubmitting(false);
           }}
         >
           {({ errors, touched, isSubmitting, values }) => (
@@ -97,7 +125,7 @@ export default function Resetpassword() {
                 name="newPassword"
                 label="New Password"
                 type="password"
-                error={touched.newPassword && errors.newPassword}
+                error={touched.newPassword && Boolean(errors.newPassword)}
                 helperText={touched.newPassword && errors.newPassword}
               />
               <PasswordStrengthIndicator password={values.newPassword} />
@@ -108,7 +136,7 @@ export default function Resetpassword() {
                 name="confirmPassword"
                 label="Confirm Password"
                 type="password"
-                error={touched.confirmPassword && errors.confirmPassword}
+                error={touched.confirmPassword && Boolean(errors.confirmPassword)}
                 helperText={touched.confirmPassword && errors.confirmPassword}
               />
               <Button
@@ -119,7 +147,7 @@ export default function Resetpassword() {
                 disabled={isSubmitting}
                 sx={{ mt: 3, mb: 2 }}
               >
-                Reset Password
+                {isSubmitting ? 'Resetting...' : 'Reset Password'}
               </Button>
             </Form>
           )}
